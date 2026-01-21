@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import CathedralStructuredData from '@/components/CathedralStructuredData'
 
 export const metadata: Metadata = {
   title: 'Git is Private | BYOK Encryption & Sovereign Privacy',
@@ -27,6 +28,7 @@ export const metadata: Metadata = {
     canonical: 'https://git-isprivate.com',
   },
   metadataBase: new URL('https://git-isprivate.com'),
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-video-preview': -1, 'max-image-preview': 'large', 'max-snippet': -1 } },
 }
 
 export default function RootLayout({
@@ -39,6 +41,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/logo-git-is-life.png" type="image/png" />
         <script defer data-domain="git-isprivate.com" src="https://plausible.io/js/script.js"></script>
+        <CathedralStructuredData siteName="Git is Private" siteUrl="https://git-isprivate.com" description="Git is Private. Your repository. Your encryption. Your sovereignty. None shall read what you commit in secret." theme="privacy" />
       </head>
       <body>{children}</body>
     </html>
